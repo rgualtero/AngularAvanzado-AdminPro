@@ -1,0 +1,38 @@
+<!-- ====================== Modificaciones ======================== -->
+<!-- (click)="CambiarValor()" Ejecuta el Metodo -->
+<!-- [ngClass]="btnClass" Implementa la clase del Input btnClass creado en incrementador.component.ts-->
+<!-- [(ngModel)]="progreso" Implementa valor del Input progreso creado en incrementador.component.ts-->
+<!-- (ngModelChange)="onChange($event)" Evento onChange para la caja de texto-->
+<!-- [ngClass]="{'is-invalid': clase tipo alert cuando se digita valor fuera del rango 0-100-->
+<!-- ============================================================== -->
+
+
+
+
+
+<!-- ============================================================== -->
+<!-- Inicio Incrementador -->  
+<!-- ============================================================== -->
+<div class="input-group">
+    <span class="input-group-btn">
+        <button type="button"
+                (click)="CambiarValor(-5)"
+                [ngClass]="btnClass">
+        -</button>
+    </span>
+    <input type="number"
+            class="form-control" 
+            [ngClass]="{'is-invalid': progreso < 0 || progreso > 100}"
+            [(ngModel)]="progreso" 
+            (ngModelChange)="onChange($event)">
+           
+    <span class="input-group-btn">
+        <button type="button"
+                (click)="CambiarValor(5)"
+                [ngClass]="btnClass">
+        +</button>
+    </span>
+</div>
+<!-- ============================================================== -->
+<!-- Inicio Incrementador -->
+<!-- ============================================================== -->

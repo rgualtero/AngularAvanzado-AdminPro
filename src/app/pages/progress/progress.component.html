@@ -1,1 +1,92 @@
-<p>progress works!</p>
+<!-- ====================== Modificaciones ======================== -->
+<!-- [(ngModel)]="progreso" Muestra valor del porcentaje en el input text, requiere importar FormsModule en pages.module.ts-->
+<!-- [style.width]="getProgreso" Obtiene el incremento mostrarlo en progressbar-->
+<!-- (valorProgreso)="progres1 = $event" Output para los progreBar-->
+<!-- [value]="progres1" input para el numero de la caja de texto-->
+<!-- [btnClass]="'btn-info'" Asigna la clase btnClass usada en los botones-->
+<!-- ============================================================== -->
+
+
+
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- Inicio Implementa ProgressBar   -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Progress bar </h4>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-info progress-bar-striped active" style="height:10px;"
+                    [style.width]="getProgreso1"    
+                    role="progressbar">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Progress bar </h4>
+                <div class="progress m-t-20">
+                    <div class="progress-bar bg-danger progress-bar-striped active" style="height:10px;"
+                    [style.width]="getProgreso2"    
+                    role="progressbar">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- ============================================================== -->
+<!-- Final Implementa ProgressBar -->
+<!-- ============================================================== -->
+
+
+
+<!-- ============================================================== -->
+<!-- Inicio Implementa Incrementador -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incrementador (valorProgreso)="progres1 = $event" 
+                                    [value]="progres1"
+                                    [btnClass]="'btn-info'">
+                </app-incrementador>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <app-incrementador (valorProgreso)="progres2 = $event" 
+                                    [value]="progres2"
+                                    [btnClass]="'btn-danger'">
+                </app-incrementador>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Final Implementa Incrementador -->
+<!-- ============================================================== -->
+
+
+
+<!-- ============================================================== -->
+<!-- End Page Content -->
+<!-- ============================================================== -->
